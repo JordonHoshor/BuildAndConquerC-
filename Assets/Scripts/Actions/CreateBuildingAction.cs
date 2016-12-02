@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CreateBuildingAction : ActionBehavior {
 
-//	public float Cost = 0;
+	public float Cost = 0;
 	public GameObject BuildingPrefab;
 	public float MaxBuildDistance = 50;
 
@@ -14,11 +14,11 @@ public class CreateBuildingAction : ActionBehavior {
 	{
 		return delegate() {
 			var player = GetComponent<Player>().Info;
-//			if (player.Credits < Cost)
-//			{
-//				Debug.Log("Not enough, this costs " + Cost);
-//				return;
-//			}
+			if (player.Credits < Cost)
+			{
+				Debug.Log("Not enough, this costs " + Cost);
+				return;
+			}
 
 			var go = GameObject.Instantiate(GhostBuildingPrefab);
 			var finder = go.AddComponent<FindbuildingSite>();

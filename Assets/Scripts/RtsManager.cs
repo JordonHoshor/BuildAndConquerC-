@@ -49,9 +49,12 @@ public class RtsManager : MonoBehaviour {
 		return true;
 	}
 
+	public RtsManager () {
+		Current = this;		
+	}
+
 	// Use this for initialization
 	void Start () {
-		Current = this;
 		foreach (var p in Players) {
 			foreach (var u in p.StartingUnits)
 			{

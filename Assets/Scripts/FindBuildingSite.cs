@@ -36,9 +36,9 @@ public class FindbuildingSite : MonoBehaviour {
 			rend.material.color = Green;
 			if (Input.GetMouseButtonDown (0)) {
 				var go = GameObject.Instantiate (BuildingPrefab);
-//				go.AddComponent<ActionSelect> ();
+				go.AddComponent<ActionSelect> ();
 				go.transform.position = transform.position;
-//				Info.Credits -= Cost;
+				Info.Credits -= Cost;
 				go.AddComponent<Player> ().Info = Info;
 				Destroy (this.gameObject);
 			}
