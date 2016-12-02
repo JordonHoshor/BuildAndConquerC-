@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 public class MouseManager : MonoBehaviour {
 
+	public static MouseManager Current;
+
+	public MouseManager()
+	{
+		Current = this;
+	}
+
 	private List<Interactive> Selections = new List<Interactive>();
 
 	// Update is called once per frame

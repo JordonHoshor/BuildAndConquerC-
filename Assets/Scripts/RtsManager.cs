@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using System.Linq;
 
 public class RtsManager : MonoBehaviour {
 
@@ -18,6 +18,35 @@ public class RtsManager : MonoBehaviour {
 			return null;
 
 		return hit.point;
+	}
+
+	public bool IsGameObjectSafeToPlace(GameObject go)
+	{
+		var verts = go.GetComponent<MeshFilter> ().mesh.vertices;
+
+		var obstacles = GameObject.FindObjectsOfType<NavMeshObstacle> ();
+		var cols = new List<Collider> ();
+		foreach (var o in obstacles) {
+			if (o.gameObject != go) {
+				cols.Add (o.gameObject.GetComponent<Collider> ());
+			}
+		}
+
+		foreach (var v in verts) {
+			NavMeshHit hit;
+			var vReal = go.transform.TransformPoint (v);
+			NavMesh.SamplePosition (vReal, out hit, 100, NavMesh.AllAreas);
+
+			bool onXAxis = Mathf.Abs (hit.position.x - vReal.x) < 0.5f;
+			bool onZAxis = Mathf.Abs (hit.position.z - vReal.z) < 0.5f;
+			bool hitCollider = cols.Any (c => c.bounds.Contains (vReal));
+
+			if (!onXAxis || !onZAxis || hitCollider) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	// Use this for initialization
