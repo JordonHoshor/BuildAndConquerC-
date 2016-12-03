@@ -20,6 +20,11 @@ public class RightClickNavigation : Interaction {
 		selected = true;
 	}
 
+	public void SendToTarget(Vector3 pos) {
+		target = pos;
+		SendToTarget ();
+	}
+
 	public void SendToTarget()
 	{
 		agent.SetDestination (target);
