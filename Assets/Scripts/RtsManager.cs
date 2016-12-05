@@ -101,6 +101,9 @@ public class RtsManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//exit Game when escape key is pressed
+		if (Input.GetKey("escape")) {
+			Application.Quit();
+		}
 	}
 }
