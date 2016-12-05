@@ -4,15 +4,21 @@ using System.Collections;
 
 public class Map : MonoBehaviour {
 
+	//position and size of ViewPort
 	public RectTransform ViewPort;
+	//GameObject Corners of the map
 	public Transform Corner1, Corner2;
+	//grab the BlipPrefab to use when a unit is created
 	public GameObject BlipPrefab;
+	//public available instance of Map
 	public static Map Current;
 
 	private Vector2 terrainSize; 
 
+	//transform for the current map, RectTransfrom includes height and width
 	private RectTransform mapRect;
 
+	//Constructor
 	public Map()
 	{
 		Current = this;
@@ -27,9 +33,9 @@ public class Map : MonoBehaviour {
 		mapRect = GetComponent<RectTransform> ();
 	}
 
+	//find out where we are in relationship to the corner of the terrain
 	public Vector2 WorldPositionToMap(Vector3 point)
 	{
-		var pos = point - Corner1.position;
 		var mapPos = new Vector2 (
 			point.x / terrainSize.x * mapRect.rect.width,
 			point.z / terrainSize.y * mapRect.rect.height);
