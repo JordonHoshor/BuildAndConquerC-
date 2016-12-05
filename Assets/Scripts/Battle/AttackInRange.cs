@@ -5,6 +5,8 @@ public class AttackInRange : MonoBehaviour {
 
 	//Item to display on attack
 	public GameObject ImpactVisual;
+	//explosion visual
+	public GameObject ExplosionVisual;
 	//how much time to wait to find a target
 	public float FindTargetDelay = 1;
 	//the attack range
@@ -14,7 +16,7 @@ public class AttackInRange : MonoBehaviour {
 	//attack damage
 	public float AttackDamage = 5;
 	//how long the bullet lasts
-	public float BulletTime = 1;
+	public float BulletTime = 2;
 
 	//get the targets health info
 	private ShowUnitInfo target;
@@ -70,6 +72,7 @@ public class AttackInRange : MonoBehaviour {
 
 		//decrement target health by attack damage
 		target.CurrentHealth -= AttackDamage;
+		var explosion = GameObject.Instantiate (ExplosionVisual, target.transform.position, Quaternion.identity);
 		//GameObject that is used to attack
 		var bullet = GameObject.Instantiate (ImpactVisual, target.transform.position, Quaternion.identity);
 		//destroy GameObject when enough time has passed
