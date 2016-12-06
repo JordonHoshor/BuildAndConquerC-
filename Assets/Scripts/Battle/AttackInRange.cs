@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class AttackInRange : MonoBehaviour {
-
-	//Item to display on attack
-	public GameObject ImpactVisual;
+	
 	//explosion visual
 	public GameObject ExplosionVisual;
 	//how much time to wait to find a target
@@ -73,10 +71,6 @@ public class AttackInRange : MonoBehaviour {
 		//decrement target health by attack damage
 		target.CurrentHealth -= AttackDamage;
 		var explosion = GameObject.Instantiate (ExplosionVisual, target.transform.position, Quaternion.identity);
-		//GameObject that is used to attack
-		var bullet = GameObject.Instantiate (ImpactVisual, target.transform.position, Quaternion.identity);
-		//destroy GameObject when enough time has passed
-		Destroy (bullet, BulletTime);
 	}
 
 	// Update is called once per frame

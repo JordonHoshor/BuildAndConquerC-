@@ -32,5 +32,10 @@ public class CameraCradle : MonoBehaviour {
 			Input.GetAxis ("Horizontal") * Speed * Time.deltaTime, //Time.deltaTime is time it took to complete last frame
 			Input.GetAxis ("Vertical") * Speed * Time.deltaTime,
 			0);
+
+		transform.position = new Vector3(
+			Mathf.Clamp(transform.position.x, 200, 800),
+			Mathf.Clamp(transform.position.y, 0, 600),
+			Mathf.Clamp(transform.position.z, 150, 880));
 	}
 }

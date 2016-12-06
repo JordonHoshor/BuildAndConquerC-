@@ -13,8 +13,12 @@ public class StrikeAi : AiBehavior {
 	//Increase squad size per wave
 	public int IncreasePerWave = 10;
 
+	Vector3[] positionArray = new [] {new Vector3(175, 55, 150), new Vector3(175, 55, 900), new Vector3(875, 55, 900), new Vector3(875, 55, 150)};
+
 	public override void Execute ()
 	{
+//		List<Transform> playerList = new List<Transform> ();
+
 		//get the ai
 		var ai = AiSupport.GetSupport (this.gameObject);
 		//log a message that the ai is attacking
@@ -28,17 +32,17 @@ public class StrikeAi : AiBehavior {
 
 		//find out where the human player is
 		foreach(var p in RtsManager.Current.Players) {
+			var randPos = Random.Range (0, positionArray.Length);
 			//ignore the other Ai
-//			if(p.IsAi)
-//				continue;
-
+			//if (p.IsAi)
+				//continue;
 			//iterate through items required to send the wave
 			for (int i = 0; i < wave; i++) {
 				var drone = ai.Drones [i];
 				//get the RightClickNavigation Component
 				var nav = drone.GetComponent<RightClickNavigation> ();
 				//send the drones to the target
-				nav.SendToTarget (p.Location.position);
+				nav.SendToTarget (positionArray[randPos - 1]);
 			}
 			return;
 		}
