@@ -10,13 +10,13 @@
 - HP is updated live for the currently selected unit
 
 # Drone Unit
-- Drones are controller with mouse, left and right click
+- Drones are controlled with mouse, left and right click
 - When a drone is selected, a rotating image appears to indicate that unit is currently selected
 - Each player starts with 1 drone
 - Drones can build a base or attack
-- When build is clicked there is a Ghost of the structure that follows the mouse
 
 # Command base
+- When build is clicked there is a Ghost of the structure that follows the mouse
 - Base can create more drones
 
 # Simple Ai
