@@ -37,7 +37,7 @@ public class CreateBaseAi : AiBehavior {
 	//override inherited methods
 	public override void Execute ()
 	{
-		Debug.Log ("Creating Base");
+		//Debug.Log ("Creating Base");
 
 		//get GameObject to Instantiate
 		var go = GameObject.Instantiate (BasePrefab);

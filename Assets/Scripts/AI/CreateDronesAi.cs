@@ -38,7 +38,7 @@ public class CreateDronesAi : AiBehavior {
 
 	public override void Execute ()
 	{
-		Debug.Log (support.Player.Name + " is creating a drone.");
+		//Debug.Log (support.Player.Name + " is creating a drone.");
 
 		//select a base to build a drone
 		var bases = support.CommandBases;

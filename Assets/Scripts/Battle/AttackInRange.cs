@@ -13,8 +13,6 @@ public class AttackInRange : MonoBehaviour {
 	public float AttackFrequency = 0.25f;
 	//attack damage
 	public float AttackDamage = 5;
-	//how long the bullet lasts
-	public float BulletTime = 2;
 
 	//get the targets health info
 	private ShowUnitInfo target;

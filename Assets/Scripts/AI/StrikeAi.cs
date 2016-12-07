@@ -17,12 +17,10 @@ public class StrikeAi : AiBehavior {
 
 	public override void Execute ()
 	{
-//		List<Transform> playerList = new List<Transform> ();
-
 		//get the ai
 		var ai = AiSupport.GetSupport (this.gameObject);
 		//log a message that the ai is attacking
-		Debug.Log(ai.Player.Name + " is attacking!");
+		//Debug.Log(ai.Player.Name + " is attacking!");
 
 		//get current wave size
 		int wave = (int)(ai.Drones.Count * SquadSize);

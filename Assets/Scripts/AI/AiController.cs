@@ -43,8 +43,8 @@ public class AiController : MonoBehaviour {
 		if (waited < Frequency)
 			return;
 
-		//loggind system for the ai
-		string aiLog = "";
+		//logging system for the ai, enable to debug ai
+		//string aiLog = "";
 		float bestAiValue = float.MinValue;
 		//reference to hold onto the best ai
 		AiBehavior bestAi = null;
@@ -56,8 +56,8 @@ public class AiController : MonoBehaviour {
 			ai.TimePassed += waited;
 			//how much is current ai worth
 			var aiValue = ai.GetWeight() * ai.WeightMultiplier + Random.Range(0, Confusion);
-			//get the ai name and value
-			aiLog += ai.GetType().Name + ":" + aiValue + "\n";
+			//get the ai name and value. enable to debug ai
+			//aiLog += ai.GetType().Name + ":" + aiValue + "\n";
 			//check to see if aiValue is better than current ai
 			if (aiValue > bestAiValue)
 			{
@@ -66,8 +66,8 @@ public class AiController : MonoBehaviour {
 				bestAi = ai;
 			}
 		}
-		//print the ailog to the console
-		Debug.Log (aiLog);
+		//print the ailog to the console, enable to debug ai
+		//Debug.Log (aiLog);
 		//execute the best ai
 		bestAi.Execute ();
 		//reset the timer
