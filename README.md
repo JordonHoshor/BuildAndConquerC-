@@ -1,4 +1,7 @@
 # 3D Real Time Strategy Built with Unity and C#
+
+- Live Demo http://jordonhoshor.com/BuildAndConquer/
+
 - Currently 1 Human Player and 3 Ai Players
 
 # Map/HUD
