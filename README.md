@@ -2,6 +2,8 @@
 
 - Live Demo http://jordonhoshor.com/BuildAndConquer/
 
+- Game logic scripts [Scripts](https://github.com/JordonHoshor/BuildAndConquerC-/tree/master/Assets/Scripts)
+
 - Currently 1 Human Player and 3 Ai Players
 
 # Map/HUD
