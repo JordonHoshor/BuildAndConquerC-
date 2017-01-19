@@ -7,7 +7,7 @@
 # Map/HUD
 - Player can control the Camera with Up, Down, Left, Right arrows
 - Minimap is active and tracks your current units
-- Enemy units wont appear until they are within range
+- Enemy units wont appear until they are within range - CURRENTLY DISABLED
 - Credits are tracked in the upper Right of the HUD
 - Shows current selected unit information and actions
 - HP is updated live for the currently selected unit
