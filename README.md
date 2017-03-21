@@ -1,6 +1,6 @@
 # 3D Real Time Strategy Built with Unity and C#
 
-- Live Demo http://jordonhoshor.com/BuildAndConquer/
+- Live Demo https://jordonhoshor.github.io/BuildAndConquer/
 
 - Game logic [scripts](https://github.com/JordonHoshor/BuildAndConquerC-/tree/master/Assets/Scripts)
 
